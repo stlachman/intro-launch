@@ -2,20 +2,17 @@ words =  ['demo', 'none', 'tied', 'evil', 'dome', 'mode', 'live',
 'fowl', 'veil', 'wolf', 'diet', 'vile', 'edit', 'tide',
 'flow', 'neon']
 
-result = {}
+word_hash = {}
 
-words.each do |word| 
+words.each do |word|
   key = word.split("").sort.join
-  if result.has_key?(key)
-    result[key].push(word)
+  if word_hash.has_key?(key)
+    word_hash[key].push(word)
   else
-    result[key] = [word]
+    word_hash[key] = [word]
   end
 end
 
-p result
-
-result.each_value do |v|
+word_hash.each_value do |v|
   p v
 end
-
